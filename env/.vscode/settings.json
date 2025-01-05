@@ -1,0 +1,9 @@
+{
+    "auto-run-command.rules": [
+        {
+            "condition": "always",
+            "command": "remote-containers.reopenInContainer",
+            "message": "Opening Container"
+        }
+    ]   
+}
