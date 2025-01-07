@@ -5,4 +5,6 @@ RUN apt-get update &&\
 
 RUN apt-get install -y clangd
 
+RUN apt-get install -y lldb
+
 CMD ["/bin/bash"]

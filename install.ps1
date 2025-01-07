@@ -3,6 +3,8 @@ param(
 )
 
 
+# Hotfix since Powershel 5.1 doesn't have ConvertFrom-Markdown
+# Meant to print formatted text in the console
 function Print-Markdown {
     param(
         [string]$Message
@@ -16,6 +18,18 @@ function Print-Markdown {
     Write-Host $formattedMessage
 }
 
+# Start Docker if not running
+function Start-Docker {
+    if (-not (Get-Process -Name "Docker Desktop" -ErrorAction SilentlyContinue)) {
+        Print-Markdown "Starting **Docker Desktop**:"
+    } else {
+        Print-Markdown "**Docker Desktop** is already running."
+        return
+    }
+    Start-Process "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+}
+
+# Ensure winget is installed
 function Ensure-Winget {
     Print-Markdown "Checking for **winget**:"
     try {
@@ -65,12 +79,11 @@ if (!$SkipInstall) {
     code --install-extension ms-vscode-remote.remote-containers
     Print-Markdown "**Remote Containers** installed YES"
     Write-Host ""
-    Print-Markdown "Installing **Auto Run** extension for Visual Studio Code:"
-    code --install-extension gabrielgrinberg.auto-run-command
-    Print-Markdown "**Auto Run** installed YES"
-    Write-Host ""
 }
+Start-Docker
 Print-Markdown "Opening project directory"
+Add-Type -AssemblyName "System.Windows.Forms"
+[System.Windows.Forms.MessageBox]::Show("To start the project, open the project directory in Visual Studio Code and press **F1** and select **Remote-Containers: Reopen in Container** or click yes in the popup for the same","How to start") > $null
 code .
 
 Set-Location ..

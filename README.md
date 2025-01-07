@@ -1,4 +1,10 @@
-# DockerC++: Easy C++ Development Enviroment for Windows
+![alt text](dockercpp.png)
+# DockerC++: Easy C/C++ Development Enviroment for Windows
+
+![alt text](image.png)
+_Autocomplete and all clangd features available_
+![alt text](image-1.png)
+_Debugging with LLDB_
 
 ## Installation & Usage
 
@@ -7,7 +13,14 @@
 
 1. `git clone` this repository or download it as a zip file (to the right, green button saying "Code")
 2. Right click on `install.ps1` and say _Run With Powershell_
-3. That should be it, if you face any issues, please open an Issue
+3. When Visual Studio Code opens, click "Reopen in Container" on the popup or run the same with the command palette (F1 or Ctrl-Shift-P)
+4. That should be it, if you face any issues, please open an Issue
+
+*Please wait a few seconds for everything to load as it might not be immediatley avaiable on the first run*
+
+## TODO
+- [ ] Migrate to [Docker Desktop CLI](https://docs.docker.com/desktop/features/desktop-cli/) once it's stable
+- [X] Add CodeLLDB + lldb in the container
 
 ## Motivation
 Usually when C++ is taught in schools and other education institutions, It is done on windows machines where the native IDE (Visual Studio) can be incredibly daunting if you are using it for the first time, It was daunting for me even though I've done C++ for comparativley ages.
