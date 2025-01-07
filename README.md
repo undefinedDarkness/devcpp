@@ -1,5 +1,13 @@
 # DockerC++: Easy C++ Development Enviroment for Windows
 
+## Installation & Usage
+
+> [!NOTE]
+> This proceduce isn't as smooth as I'd want it to be, but hopefully if I get time to work on it more, I can refine it
+
+1. `git clone` this repository or download it as a zip file (to the right, green button saying "Code")
+2. Right click on `install.ps1` and say _Run With Powershell_
+3. That should be it, if you face any issues, please open an Issue
 
 ## Motivation
 Usually when C++ is taught in schools and other education institutions, It is done on windows machines where the native IDE (Visual Studio) can be incredibly daunting if you are using it for the first time, It was daunting for me even though I've done C++ for comparativley ages.
